@@ -1,7 +1,12 @@
+import { CardForm } from './components';
 import './App.scss';
 
-function App() {
-    return <div className="App">Ready to work</div>;
-}
+const App = () => {
+    return (
+        <div className="App">
+            <CardForm />
+        </div>
+    );
+};
 
 export default App;
