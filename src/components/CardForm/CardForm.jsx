@@ -28,7 +28,7 @@ const CardForm = () => {
                 onSubmit={handleFormSubmit}
                 className="d-flex flex-wrap w-100"
             >
-                <fieldset className="d-flex flex-wrap w-100">
+                <fieldset className=" fildset d-flex flex-wrap w-100">
                     <label>Email</label>
                     <input
                         type="email"
@@ -39,7 +39,7 @@ const CardForm = () => {
                         value={formData.email}
                     />
                 </fieldset>
-                <fieldset className="d-flex flex-column align-items-start w-100 ">
+                <fieldset className=" fildset d-flex flex-column align-items-start w-100 ">
                     <label>Card number</label>
                     <input
                         type="number"
@@ -55,7 +55,7 @@ const CardForm = () => {
                             type="text"
                             onfocus="(this.type='date')"
                             className="form-control-date"
-                            placeholder="mm-yy"
+                            placeholder="MM / YY"
                         />
                         <input
                             type="number"
@@ -64,7 +64,7 @@ const CardForm = () => {
                         />
                     </div>
                 </fieldset>
-                <fieldset className="d-flex flex-wrap w-100">
+                <fieldset className=" fildset d-flex flex-wrap w-100">
                     <label>Name on card</label>
                     <input
                         type="text"
@@ -75,7 +75,7 @@ const CardForm = () => {
                         value={formData.name}
                     />
                 </fieldset>
-                <fieldset className="d-flex flex-wrap w-100">
+                <fieldset className=" fildset d-flex flex-wrap flex-column align-items-start w-100">
                     <label>Country or region</label>
                     <select
                         type="selector"
@@ -90,6 +90,7 @@ const CardForm = () => {
                         name="zipCode"
                         className="form-control-zipCode"
                         id="zipCode"
+                        placeholder="ZIP"
                         onChange={handleInputChange}
                         value={formData.zipCode}
                     />
