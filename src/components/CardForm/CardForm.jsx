@@ -1,5 +1,5 @@
-import { PayButton } from '..';
 import { useState } from 'react';
+import { PayButton } from '..';
 import './CardForm.scss';
 
 const INITIAL_STATE = {
@@ -9,8 +9,14 @@ const INITIAL_STATE = {
     cardNumber: '',
     zipCode: '',
 };
+const priceToPay = '$899,00';
 
 const CardForm = () => {
+    const [btnInfo] = useState({
+        btnText: ' Pay',
+        price: priceToPay,
+        className: 'btn btn-backgroundcolor-b ',
+    });
     const [formData, setFormData] = useState(INITIAL_STATE);
 
     const handleFormSubmit = async (ev) => {
@@ -96,7 +102,7 @@ const CardForm = () => {
                         value={formData.zipCode}
                     />
                 </fieldset>
-                <PayButton />
+                <PayButton data={btnInfo} />
             </form>
         </div>
     );
