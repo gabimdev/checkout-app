@@ -1,11 +1,11 @@
-import { CardForm, PayButton } from './components';
+import { PayView } from './pages';
+
 import './App.scss';
 
 const App = () => {
     return (
         <div className="App">
-            <CardForm />
-            <PayButton />
+            <PayView />
         </div>
     );
 };

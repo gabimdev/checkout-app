@@ -1,3 +1,4 @@
+import { PayButton } from '..';
 import { useState } from 'react';
 import './CardForm.scss';
 
@@ -95,6 +96,7 @@ const CardForm = () => {
                         value={formData.zipCode}
                     />
                 </fieldset>
+                <PayButton />
             </form>
         </div>
     );
