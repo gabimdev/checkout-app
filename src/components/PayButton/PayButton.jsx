@@ -1,10 +1,9 @@
 import './PayButton.scss';
 
 const PayButton = (props) => {
-    console.log(props.data);
     return (
         <div>
-            <button className={props.data.className}>
+            <button type="submit" className={props.data.className}>
                 {props.data.btnText ? (
                     <div d-flex flex-row>
                         <span className="btn__text">{props.data.btnText}</span>
