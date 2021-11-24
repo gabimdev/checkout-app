@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import validator from 'validator';
 import { PayButton } from '..';
+import { getAllCountries } from '../../api/country';
 import './CardForm.scss';
 
 const INITIAL_STATE = {
@@ -16,15 +17,31 @@ const priceToPay = '$899,00';
 
 const CardForm = () => {
     const [errorMessage] = useState('Enter valid CreditCard Number!');
-
+    const [formData, setFormData] = useState(INITIAL_STATE);
     const [btnInfo] = useState({
         btnText: ' Pay',
         price: priceToPay,
         className: 'btn btn-backgroundcolor-b ',
     });
-    const [formData, setFormData] = useState(INITIAL_STATE);
-    const today = new Date(99, 12);
-    console.log(today);
+    const [countries, setCountries] = useState([]);
+
+    useEffect(() => {
+        const allCountries = async () => {
+            const allCountriesAsync = await getAllCountries();
+            setCountries(allCountriesAsync.data);
+        };
+        allCountries();
+    }, []);
+
+    const countriesToPrint = countries.sort(function (a, b) {
+        if (a.name > b.name) {
+            return 1;
+        }
+        if (a.name < b.name) {
+            return -1;
+        }
+        return 0;
+    });
 
     const handleFormSubmit = async (ev) => {
         ev.preventDefault();
@@ -36,7 +53,6 @@ const CardForm = () => {
     const handleInputChange = (ev) => {
         const { name, value } = ev.target;
         setFormData({ ...formData, [name]: value });
-        console.log(formData);
     };
 
     return (
@@ -134,7 +150,17 @@ const CardForm = () => {
                         id="country"
                         onChange={handleInputChange}
                         value={formData.country}
-                    />
+                    >
+                        {countries ? (
+                            countriesToPrint.map((country) => (
+                                <option value={country.name} key={country.name}>
+                                    {country.name}
+                                </option>
+                            ))
+                        ) : (
+                            <span> 'Loading ...'</span>
+                        )}
+                    </select>
                     <input
                         type="number"
                         name="zipCode"

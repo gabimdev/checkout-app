@@ -6,7 +6,7 @@ export const getAllCountries = async () => {
         method: 'GET',
     });
     const response = await request.json();
-    if (!response.ok) {
+    if (!request.ok) {
         throw new Error(response.message);
     }
     return response;
