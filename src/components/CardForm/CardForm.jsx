@@ -28,15 +28,10 @@ const CardForm = () => {
 
     const handleFormSubmit = async (ev) => {
         ev.preventDefault();
-        if (validator.isCreditCard(formData.cardNumber))
-            if (validator.isBefore(formData.cardDate)) {
-                console.log('OK', ev.traget);
-            } else {
-                console.log('ERROR', validator.isDate(formData.cardDate));
-            }
+        if (validator.isCreditCard(formData.cardNumber)) {
+            console.log('OK', ev.traget);
+        }
     };
-    const date = validator.isBefore(formData.cardDate);
-    console.log(date, formData.cardDate);
 
     const handleInputChange = (ev) => {
         const { name, value } = ev.target;
@@ -87,6 +82,7 @@ const CardForm = () => {
                         onChange={handleInputChange}
                         value={formData.cardNumber}
                         maxLength="16"
+                        minLength="16"
                         required
                     />
 
@@ -100,9 +96,11 @@ const CardForm = () => {
                             pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$"
                             onChange={handleInputChange}
                             value={formData.cardDate}
+                            minLength="5"
+                            maxLength="5"
                         />
                         <input
-                            type="number"
+                            type="text"
                             name="cardCvc"
                             id="cardCvc"
                             className="form-control-cvc"
@@ -110,6 +108,7 @@ const CardForm = () => {
                             onChange={handleInputChange}
                             value={formData.cardCvc}
                             maxLength="3"
+                            minLength="3"
                         />
                     </div>
                 </fieldset>
