@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CardForm, PayButton } from '../../components';
+import { CardForm, PayButton, ProductView } from '../../components';
 import './PayView.scss';
 import appleLogo from '../../assets/XMLID34.png';
 
@@ -11,6 +11,7 @@ const PayView = () => {
     });
     return (
         <>
+            <ProductView />
             <PayButton data={btnInfo} />
             <div className="divisor d-flex flex-row">
                 <span className="divisor__line">
