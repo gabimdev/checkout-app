@@ -1,11 +1,44 @@
+.link-container {
+    display: flex;
+    justify-content: start;
+    width: 80%;
+    margin: 80px 24px 80px 24px;
+    &__link {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__img {
+        width: 20px;
+        height: 18.6px;
+        margin: 0;
+        padding: 0;
+    }
+    &__title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #1a1f36;
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+    }
+}
 .divisor {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
     &__line {
-        width: 90px;
-        margin: auto 7px;
+        width: 93px;
+        margin: 0 12px 0 12px;
     }
     &__text {
         width: 115px;
         height: 24px;
+        margin: 0;
 
         font-family: Roboto;
         font-style: normal;
