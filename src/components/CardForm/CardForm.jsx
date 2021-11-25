@@ -52,6 +52,7 @@ const CardForm = () => {
         if (validator.isCreditCard(formData.cardNumber)) {
             if (validator.isEmail(formData.email)) {
                 console.log('ok');
+                setFormData(INITIAL_STATE);
             }
         }
     };
@@ -130,6 +131,7 @@ const CardForm = () => {
                             value={formData.cardDate}
                             minLength="5"
                             maxLength="5"
+                            required
                         />
                         <input
                             type="text"
@@ -141,6 +143,7 @@ const CardForm = () => {
                             value={formData.cardCvc}
                             maxLength="3"
                             minLength="3"
+                            required
                         />
                     </div>
                 </fieldset>
