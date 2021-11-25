@@ -3,9 +3,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    &__image-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     &__img {
         width: 175.94px;
         height: 100px;
+        margin: 0 auto;
     }
     &__title {
         width: 82px;
@@ -35,6 +42,7 @@
     height: 44px;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .margin {

@@ -1,18 +1,21 @@
 import './ProductView.scss';
-import productImage from '../../assets/image7.png';
+import getIten from '../../api/cart';
 
 const ProductView = () => {
+    const img = require('../../assets/image7.png').default;
+
     return (
         <div className="product-container">
-            <img
-                src={productImage}
-                alt="name"
-                className="product-container__img"
-            />
-            <p className="product-container__title">New mac</p>
+            <div className="product-container__image-title">
+                <img src={img} alt="name" className="product-container__img" />
+                <p className="product-container__title">{getIten.name}</p>
+            </div>
             <div className="product-container-flex">
                 <p className="product-container__price">$</p>
-                <p className="product-container__price margin"> 899.00</p>
+                <p className="product-container__price margin">
+                    {' '}
+                    {getIten.price}
+                </p>
             </div>
         </div>
     );
