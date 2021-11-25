@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import validator from 'validator';
 import { PayButton } from '..';
 import { getAllCountries } from '../../api/country';
+import getIten from '../../api/cart';
 import './CardForm.scss';
 
 const INITIAL_STATE = {
@@ -13,17 +14,20 @@ const INITIAL_STATE = {
     cardCvc: '',
     zipCode: '',
 };
-const priceToPay = '$899,00';
+const priceToPay = getIten.price;
 
 const CardForm = () => {
-    const [errorMessage] = useState('Enter valid CreditCard Number!');
+    const [errorMessageCard] = useState('Enter valid Number!');
+    const [errorMessageEmail] = useState('Enter valid Email!');
     const [formData, setFormData] = useState(INITIAL_STATE);
+    const [countries, setCountries] = useState([]);
+    const [checkEmail, setCheckEmail] = useState('');
+    const [checkCard, setCheckCard] = useState('');
     const [btnInfo] = useState({
         btnText: ' Pay',
         price: priceToPay,
         className: 'btn btn-backgroundcolor-b ',
     });
-    const [countries, setCountries] = useState([]);
 
     useEffect(() => {
         const allCountries = async () => {
@@ -46,7 +50,9 @@ const CardForm = () => {
     const handleFormSubmit = async (ev) => {
         ev.preventDefault();
         if (validator.isCreditCard(formData.cardNumber)) {
-            console.log('OK', ev.traget);
+            if (validator.isEmail(formData.email)) {
+                console.log('ok');
+            }
         }
     };
 
@@ -54,15 +60,23 @@ const CardForm = () => {
         const { name, value } = ev.target;
         setFormData({ ...formData, [name]: value });
     };
-
     return (
         <div className="maincontainer">
             <form
                 onSubmit={handleFormSubmit}
-                className="d-flex flex-wrap w-100"
+                className="form d-flex flex-wrap w-100"
             >
                 <fieldset className=" fildset d-flex flex-wrap w-100">
-                    <label>Email</label>
+                    <label className="form__label">Email</label>
+                    {!validator.isEmail(formData.email) &&
+                    formData.email.length >= 1 &&
+                    checkEmail === 'check' ? (
+                        <span className="alert alert-danger">
+                            {errorMessageEmail}
+                        </span>
+                    ) : (
+                        <span></span>
+                    )}
                     <input
                         type="email"
                         name="email"
@@ -72,27 +86,27 @@ const CardForm = () => {
                         required
                         onChange={handleInputChange}
                         value={formData.email}
+                        onFocus={() => setCheckEmail('')}
+                        onBlur={() => setCheckEmail('check')}
                     />
                 </fieldset>
                 <fieldset className=" fildset d-flex flex-column align-items-start w-100 ">
-                    <label>Card number</label>
-                    {!validator.isCreditCard(formData.cardNumber) &&
-                    formData.cardNumber.length >= 16 ? (
-                        <span
-                            style={{
-                                fontWeight: 'bold',
-                                color: 'red',
-                            }}
-                        >
-                            {errorMessage}
-                        </span>
-                    ) : (
-                        <span></span>
-                    )}
+                    <div className="d-flex flex-wrap w-100">
+                        <label className="form__label">Card number</label>
+                        {!validator.isCreditCard(formData.cardNumber) &&
+                        formData.cardNumber.length >= 1 &&
+                        checkCard === 'check' ? (
+                            <span className="alert alert-danger alert-size">
+                                {errorMessageCard}
+                            </span>
+                        ) : (
+                            <span></span>
+                        )}
+                    </div>
                     <input
                         type="text"
                         name="cardNumber"
-                        className="form-control order-0 "
+                        className="form-control"
                         id="cardNumber"
                         placeholder="1234 1234 1234 1234"
                         onChange={handleInputChange}
@@ -100,6 +114,8 @@ const CardForm = () => {
                         maxLength="16"
                         minLength="16"
                         required
+                        onFocus={() => setCheckCard('')}
+                        onBlur={() => setCheckCard('check')}
                     />
 
                     <div className="d-flex flex-row w-100">
@@ -129,7 +145,7 @@ const CardForm = () => {
                     </div>
                 </fieldset>
                 <fieldset className=" fildset d-flex flex-wrap w-100">
-                    <label>Name on card</label>
+                    <label className="form__label">Name on card</label>
                     <input
                         type="text"
                         name="name"
@@ -142,7 +158,7 @@ const CardForm = () => {
                     />
                 </fieldset>
                 <fieldset className=" fildset d-flex flex-wrap flex-column align-items-start w-100">
-                    <label>Country or region</label>
+                    <label className="form__label">Country or region</label>
                     <select
                         type="selector"
                         name="country"
