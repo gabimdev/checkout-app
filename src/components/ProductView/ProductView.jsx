@@ -7,7 +7,7 @@ const ProductView = () => {
     return (
         <div className="product-container">
             <div className="product-container__image-title">
-                <img src={img} alt="name" className="product-container__img" />
+                <img src={img} alt="product name" className="img-fluid" />
                 <p className="product-container__title">{getIten.name}</p>
             </div>
             <div className="product-container-flex">

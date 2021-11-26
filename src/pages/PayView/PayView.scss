@@ -1,6 +1,8 @@
+@import '../../styles/responsive';
+
 .link-container {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     width: 80%;
     margin: 80px 24px 80px 24px;
     &__link {

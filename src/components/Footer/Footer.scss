@@ -1,18 +1,20 @@
+@import '../../styles/responsive';
 .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 22px;
-    /* identical to box height, or 183% */
-
     letter-spacing: 0.015em;
     font-feature-settings: 'tnum' on, 'lnum' on;
     margin: 42px 0 72px 0;
-
-    /* icon/icon-gray */
-
     color: #8792a2;
+    &__text {
+        margin-right: 4px;
+    }
     &__link {
         margin: 5px 10px;
         text-decoration: none;
@@ -26,4 +28,23 @@ a:active,
 a:focus {
     text-decoration: none;
     color: #8792a2;
+}
+@include mobile {
+    .displayNone {
+        display: none;
+    }
+}
+@include desktop {
+    .main-footer {
+        display: none;
+    }
+    .footer__link:last-child {
+        margin-left: 19px;
+    }
+    .first-link::before {
+        content: '|';
+        color: #838383;
+        font-size: 18px;
+        margin: 0 22px 0 16.46px;
+    }
 }

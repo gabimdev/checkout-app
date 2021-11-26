@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { CardForm, PayButton, ProductView } from '../../components';
+import { CardForm, PayButton, ProductView, Footer } from '../../components';
+
 import './PayView.scss';
 import appleLogo from '../../assets/XMLID34.png';
 import arrow from '../../assets/arrow-left.svg';
@@ -30,6 +31,7 @@ const PayView = () => {
                         </a>
                     </div>
                     <ProductView />
+                    <Footer class={'footer displayNone'} />
                 </div>
                 <div className="col-sm-12 col-md-6">
                     <PayButton data={btnInfo} />
