@@ -1,0 +1,14 @@
+$layout_bp_mobile: 768px;
+$layout_bp_desktop: 769px;
+
+@mixin mobile {
+    @media only screen and (max-width: #{$layout_bp_mobile}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: #{$layout_bp_desktop}) {
+        @content;
+    }
+}
