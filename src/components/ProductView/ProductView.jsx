@@ -7,15 +7,21 @@ const ProductView = () => {
     return (
         <div className="product-container">
             <div className="product-container__image-title">
-                <img src={img} alt="product name" className="img-fluid" />
-                <p className="product-container__title">{getIten.name}</p>
+                <img
+                    src={img}
+                    alt="product name"
+                    className="product-container__img"
+                />
             </div>
-            <div className="product-container-flex">
-                <p className="product-container__price">$</p>
-                <p className="product-container__price margin">
-                    {' '}
-                    {getIten.price}
-                </p>
+            <div className="product-container__text">
+                <p className="product-container__title">{getIten.name}</p>
+                <div className="product-container-flex">
+                    <p className="product-container__price">$</p>
+                    <p className="product-container__price margin">
+                        {' '}
+                        {getIten.price}
+                    </p>
+                </div>
             </div>
         </div>
     );
