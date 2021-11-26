@@ -1,9 +1,7 @@
 .maincontainer {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     padding: 0px;
-    width: 327px;
     height: auto;
     margin: 0 24px;
 }
@@ -21,23 +19,14 @@
     justify-content: center;
     align-items: flex-start;
     padding: 9px 12px;
-
-    position: static;
     height: 40px;
     left: 0px;
     right: 0px;
     top: 30px;
     width: 100%;
-
-    /* white */
-
     background: #ffffff;
-    /* border-color */
-
     border: 1px solid rgba(60, 66, 87, 0.12);
     box-sizing: border-box;
-    /* shadow-small */
-
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08), 0px 1px 1px rgba(0, 0, 0, 0.04);
     border-radius: 8px;
 }
@@ -45,7 +34,6 @@
 .order-0 {
     border: 1px solid rgba(60, 66, 87, 0.12);
     box-sizing: border-box;
-    /* shadow-small */
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08), 0px 1px 1px rgba(0, 0, 0, 0.04);
     border-radius: 8px 8px 0px 0px;
     border-radius: 8px 8px 0px 0px;
@@ -83,18 +71,10 @@
     right: 0px;
     top: 0px;
     width: 50%;
-
-    /* white */
-
     background: #ffffff;
-    /* border-color */
-
     border: 1px solid rgba(60, 66, 87, 0.12);
     box-sizing: border-box;
     border-radius: 0px 0px 8px 0px;
-
-    /* Inside Auto Layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -107,22 +87,14 @@
     justify-content: center;
     align-items: flex-start;
     padding: 9px 12px;
-
     height: 40px;
     left: 0px;
     right: 0px;
     width: 100%;
     margin-top: 8px;
-
-    /* white */
-
     background: #ffffff;
-    /* border-color */
-
     border: 1px solid rgba(60, 66, 87, 0.12);
     box-sizing: border-box;
-    /* shadow-small */
-
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08), 0px 1px 1px rgba(0, 0, 0, 0.04);
     border-radius: 8px 8px 0px 0px;
 }
@@ -133,23 +105,14 @@
     justify-content: center;
     align-items: flex-start;
     padding: 9px 12px;
-
-    position: static;
     height: 40px;
     left: 0px;
     right: 0px;
     top: 343px;
     width: 100%;
-
-    /* white */
-
     background: #ffffff;
-    /* border-color */
-
     border: 1px solid rgba(60, 66, 87, 0.12);
     box-sizing: border-box;
-    /* shadow-small */
-
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.08), 0px 1px 1px rgba(0, 0, 0, 0.04);
     border-radius: 0px 0px 8px 8px;
 }

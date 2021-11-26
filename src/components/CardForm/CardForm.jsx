@@ -65,7 +65,7 @@ const CardForm = () => {
         <div className="maincontainer">
             <form
                 onSubmit={handleFormSubmit}
-                className="form d-flex flex-wrap w-100"
+                className="form d-flex flex-wrap w-100 justify-content-center"
             >
                 <fieldset className=" fildset d-flex flex-wrap w-100">
                     <label className="form__label">Email</label>
