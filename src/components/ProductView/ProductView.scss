@@ -1,80 +1,41 @@
 @import '../../styles/responsive';
-.product-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 
-    &__image-title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-    &__img {
-        width: 175.94px;
-        height: 100px;
-        margin: 0 auto;
-    }
-    &__text {
-        width: 60%;
-    }
-    &__title {
-        width: 82px;
-        height: 24px;
-        margin: 8px 0px;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
-        color: #697386;
-    }
-    &__price {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: 900;
-        font-size: 36px;
-        line-height: 44px;
-        letter-spacing: -0.02em;
-        font-feature-settings: 'tnum' on, 'lnum' on;
-        color: #1a1f36;
-    }
+.product-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #697386;
 }
-
-.product-container-flex {
-    width: 112px;
-    height: 44px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.product-price {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    color: #1a1f36;
 }
 
 .margin {
     margin-left: 8px;
 }
-
+.margin-title-box {
+    margin-top: 0;
+    margin-bottom: 66px;
+}
+.margin-price-box {
+    margin-top: 8px;
+}
 @include desktop {
-    .product-container {
-        width: 80%;
-        margin-bottom: 94px;
-        margin-left: 10%;
-        flex-direction: column-reverse;
-        &__text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-bottom: 66px;
-        }
-        &__title {
-            margin-bottom: 8px;
-            text-align: left;
-        }
-        &__img {
-            width: 527.82px;
-            height: 300px;
-        }
+    .margin {
+        margin-left: 8px;
+    }
+    .margin-title-box {
+        margin-top: 32px;
+    }
+    .margin-price-box {
+        margin-top: 8px;
     }
 }
