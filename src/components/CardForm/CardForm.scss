@@ -33,12 +33,22 @@
 
 .card-radius {
     border-radius: 8px 8px 0px 0px;
+    background-image: url(../../assets/visa.svg),
+        url(../../assets/mastercard.svg), url(../../assets/amex.svg),
+        url(../../assets/discover.svg);
+    background-position: 62%, 74%, 86%, 98%;
+    background-repeat: no-repeat;
+    background-size: 9%;
 }
 .date-radius {
     border-radius: 0px 0px 0px 8px;
 }
 .cvc-radius {
     border-radius: 0px 0px 8px 0px;
+    background-image: url(../../assets/cvc.png);
+    background-position: 96%;
+    background-repeat: no-repeat;
+    background-size: 18%;
 }
 
 .country-radius {
@@ -63,4 +73,10 @@
 .alert-size {
     width: 140px;
     margin: 0 10px;
+}
+
+.card-logo {
+    position: absolute;
+    top: 20%;
+    left: 10%;
 }
