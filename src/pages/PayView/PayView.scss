@@ -54,3 +54,9 @@
         color: #8792a2;
     }
 }
+
+@include desktop {
+    .link-container {
+        margin-left: 171px;
+    }
+}

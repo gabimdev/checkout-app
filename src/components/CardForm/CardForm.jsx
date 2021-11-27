@@ -62,26 +62,28 @@ const CardForm = () => {
         setFormData({ ...formData, [name]: value });
     };
     return (
-        <div className="maincontainer">
+        <div className="maincontainer container">
             <form
                 onSubmit={handleFormSubmit}
-                className="form d-flex flex-wrap w-100 justify-content-center"
+                className="form column justify-content-center align-items-center"
             >
-                <fieldset className=" fildset d-flex flex-wrap w-100">
-                    <label className="form__label">Email</label>
-                    {!validator.isEmail(formData.email) &&
-                    formData.email.length >= 1 &&
-                    checkEmail === 'check' ? (
-                        <span className="alert alert-danger">
-                            {errorMessageEmail}
-                        </span>
-                    ) : (
-                        <span></span>
-                    )}
+                <fieldset className=" fildset col-12">
+                    <div className="row col-12 justify-content-start">
+                        <label className="form__label col-4">Email</label>
+                        {!validator.isEmail(formData.email) &&
+                        formData.email.length >= 1 &&
+                        checkEmail === 'check' ? (
+                            <span className="alert alert-danger col-8">
+                                {errorMessageEmail}
+                            </span>
+                        ) : (
+                            <span className="col-8 d-none "></span>
+                        )}
+                    </div>
                     <input
                         type="email"
                         name="email"
-                        className="form-control"
+                        className="form-control col-12"
                         id="email"
                         pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
                         required
@@ -91,9 +93,9 @@ const CardForm = () => {
                         onBlur={() => setCheckEmail('check')}
                     />
                 </fieldset>
-                <fieldset className=" fildset d-flex flex-column align-items-start w-100 ">
-                    <div className="d-flex flex-wrap w-100">
-                        <label className="form__label">Card number</label>
+                <fieldset className=" fildset col-12 ">
+                    <div className="row col-12 justify-content-start">
+                        <label className="form__label col-4">Card number</label>
                         {!validator.isCreditCard(formData.cardNumber) &&
                         formData.cardNumber.length >= 1 &&
                         checkCard === 'check' ? (
@@ -101,13 +103,13 @@ const CardForm = () => {
                                 {errorMessageCard}
                             </span>
                         ) : (
-                            <span></span>
+                            <span className="col-8 d-none "></span>
                         )}
                     </div>
                     <input
                         type="text"
                         name="cardNumber"
-                        className="form-control"
+                        className="form-control card-radius col-12"
                         id="cardNumber"
                         placeholder="1234 1234 1234 1234"
                         onChange={handleInputChange}
@@ -119,12 +121,12 @@ const CardForm = () => {
                         onBlur={() => setCheckCard('check')}
                     />
 
-                    <div className="d-flex flex-row w-100">
+                    <div className="row col-12 m-0">
                         <input
                             type="text"
                             name="cardDate"
                             id="cardDate"
-                            className="form-control-date"
+                            className="form-control date-radius col"
                             placeholder="MM / YY"
                             pattern="^(0[1-9]|1[0-2])\/?([0-9]{2})$"
                             onChange={handleInputChange}
@@ -137,7 +139,7 @@ const CardForm = () => {
                             type="text"
                             name="cardCvc"
                             id="cardCvc"
-                            className="form-control-cvc"
+                            className="form-control cvc-radius col"
                             placeholder="CVC"
                             onChange={handleInputChange}
                             value={formData.cardCvc}
@@ -147,7 +149,7 @@ const CardForm = () => {
                         />
                     </div>
                 </fieldset>
-                <fieldset className=" fildset d-flex flex-wrap w-100">
+                <fieldset className=" fildset col-12">
                     <label className="form__label">Name on card</label>
                     <input
                         type="text"
@@ -160,16 +162,17 @@ const CardForm = () => {
                         required
                     />
                 </fieldset>
-                <fieldset className=" fildset d-flex flex-wrap flex-column align-items-start w-100">
+                <fieldset className=" fildset col-12">
                     <label className="form__label">Country or region</label>
                     <select
                         type="selector"
                         name="country"
-                        className="form-control-country"
+                        className="form-control country-radius"
                         id="country"
                         onChange={handleInputChange}
                         value={formData.country}
                     >
+                        <option>Select country</option>
                         {countries ? (
                             countriesToPrint.map((country) => (
                                 <option value={country.name} key={country.name}>
@@ -183,7 +186,7 @@ const CardForm = () => {
                     <input
                         type="number"
                         name="zipCode"
-                        className="form-control-zipCode"
+                        className="form-control zipCode-radius"
                         id="zipCode"
                         placeholder="ZIP"
                         onChange={handleInputChange}
