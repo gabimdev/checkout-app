@@ -62,10 +62,10 @@ const CardForm = () => {
         setFormData({ ...formData, [name]: value });
     };
     return (
-        <div className="maincontainer container">
+        <div className="row col-12 container justify-content-center maincontainer">
             <form
                 onSubmit={handleFormSubmit}
-                className="form column justify-content-center align-items-center"
+                className="form row col-12 justify-content-center align-items-center p-0"
             >
                 <fieldset className=" fildset col-12">
                     <div className="row col-12 justify-content-start">
@@ -85,7 +85,10 @@ const CardForm = () => {
                         name="email"
                         className="form-control col-12"
                         id="email"
-                        pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
+                        pattern="^[a-z0-9!#$%&'*+/=?^_`{|}~-]+
+                        (?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*
+                        @(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+
+                        [a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"
                         required
                         onChange={handleInputChange}
                         value={formData.email}

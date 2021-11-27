@@ -1,48 +1,26 @@
 .btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 12px 48px;
-
-    width: 327px;
-    height: 48px;
-    left: 0px;
-
-    /* text/text-default */
-
-    /* shadow-button */
-
     box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.12),
         0px 2px 5px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.08);
     border-radius: 4px;
-
-    /* Inside Auto Layout */
     margin-top: 32px;
-    &__text {
-        position: static;
-        width: 117px;
-        height: 24px;
-        left: 152px;
-        top: 12px;
 
+    &__container {
+        display: flex;
+        justify-content: center;
+    }
+    &__text {
+        display: flex;
+        justify-content: center;
         font-family: Montserrat;
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 24px;
-        /* identical to box height, or 133% */
-
-        /* icon/icon-gray */
-
         color: #8792a2;
-
-        /* Inside Auto Layout */
-
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-        margin: 10px 2px;
+    }
+    &__price {
+        margin-left: 7px;
     }
 }
 
