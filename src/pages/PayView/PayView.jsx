@@ -40,11 +40,11 @@ const PayView = () => {
                                 <PayButton data={btnInfo} />
                             </div>
                             <div className="divisor row-12 p-0">
-                                <hr className="divisor__line col-4"></hr>
-                                <span className="divisor__text col-4">
+                                <hr className="divisor__line col-3"></hr>
+                                <span className="divisor__text col-6">
                                     Or pay with card
                                 </span>
-                                <hr className="divisor__line col-4"></hr>
+                                <hr className="divisor__line col-3"></hr>
                             </div>
                         </div>
                         <CardForm />
