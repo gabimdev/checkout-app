@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import validator from 'validator';
-import { PayButton } from '..';
+import { PayButton, Footer } from '..';
 import { getAllCountries } from '../../api/country';
 import getIten from '../../api/cart';
 import './CardForm.scss';
@@ -203,6 +203,7 @@ const CardForm = () => {
                 </fieldset>
                 <PayButton data={btnInfo} />
             </form>
+            <Footer class={'footer main-footer '} />
         </div>
     );
 };
