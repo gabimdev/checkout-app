@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Checkout-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Front end checkout component for payments with credit card or apple pay. Made with React.
 
-## Available Scripts
+## Background
 
-In the project directory, you can run:
+Project created for the Nuwe and Jump2digital challenge.
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This link lets you view the component and assess how it works.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Component
 
-### `npm test`
+This component is implemented through the <PayView> component and displayed in the React <App/>.
+The <PageView/> component rendering the components <CardForm/>, <PayButton/>, <Footer/> and <ProductView/>.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The component uses Fetch with a GET method to access product information in the API.
+The API endpoint must return a JSON file with the product information below:
+{
+"img": "image path",
+"name": "name of the product",
+"price": "price of the product",
+}
 
-### `npm run build`
+The card info sent to the API endpoint a JSON file with the info below:
+{
+email: 'client email',
+name: 'client name',
+country: 'client country',
+cardNumber: 'card number',
+cardDate: 'valid date creditcard',
+cardCvc: 'credit card secure code',
+zipCode: 'client Zip Code',
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+All the information that is sent and received are in string format.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This component was made to work on a React project.
 
-### `npm run eject`
+First - clone the repo:
+git clone https://github.com/gabimdev/checkout-app.git
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Second - install dependencies:
+npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Third - run the server:
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For additional information, see the official React documentation.
+https://reactjs.org/docs/getting-started.html
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Import Bootstrap in the index.html.
 
-## Learn More
+For the CSS put this line inside the <head>:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For the JS put this line inside a <script> in the <boby>:
 
-### Code Splitting
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For additional information, see the official Bootstrap documentation.
+https://getbootstrap.com/docs/5.1/getting-started/introduction/
 
-### Analyzing the Bundle Size
+## Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+React - Chosen because it is a popular framework, and the component could be integrated into several projects with this framework.
+Bootstrap - An easy system to add styles to the project, also popular and used in several projects.
+Sass - To add personalization to bootstrap styles.
+Validator - An NPM package for validating form information.
 
-### Making a Progressive Web App
+## Roadmap and visuals | Not using the common-readme | Not required
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Explicación extra, imágenes, wireframes, mockups, GIFs, etc.
 
-### Advanced Configuration
+## Reconocimientos | Not using the common-readme | Not required
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Many thanks to NUWE for proposing this challenge.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Inlcuir la licéncia y el link a esta
+[MIT](https://opensource.org/licenses/MIT)
