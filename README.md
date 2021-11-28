@@ -8,7 +8,7 @@ Project created for the Nuwe and Jump2digital challenge.
 
 ## Usage
 
-This link lets you view the component and assess how it works.
+This [link](https://gabriel-miranda-checkout-app.netlify.app/) lets you view the component and assess how it works.
 
 ## Component
 
@@ -17,22 +17,24 @@ The <PageView/> component rendering the components <CardForm/>, <PayButton/>, <F
 
 The component uses Fetch with a GET method to access product information in the API.
 The API endpoint must return a JSON file with the product information below:
-{
-"img": "image path",
-"name": "name of the product",
-"price": "price of the product",
-}
+
+    {
+    "img": "image path",
+    "name": "name of the product",
+    "price": "price of the product",
+    }
 
 The card info sent to the API endpoint a JSON file with the info below:
-{
-email: 'client email',
-name: 'client name',
-country: 'client country',
-cardNumber: 'card number',
-cardDate: 'valid date creditcard',
-cardCvc: 'credit card secure code',
-zipCode: 'client Zip Code',
-}
+
+    {
+    email: 'client email',
+    name: 'client name',
+    country: 'client country',
+    cardNumber: 'card number',
+    cardDate: 'valid date creditcard',
+    cardCvc: 'credit card secure code',
+    zipCode: 'client Zip Code',
+    }
 
 All the information that is sent and received are in string format.
 
@@ -41,42 +43,43 @@ All the information that is sent and received are in string format.
 This component was made to work on a React project.
 
 First - clone the repo:
-git clone https://github.com/gabimdev/checkout-app.git
+
+`git clone https://github.com/gabimdev/checkout-app.git`
 
 Second - install dependencies:
-npm install
+
+`npm install`
 
 Third - run the server:
-npm start
 
-For additional information, see the official React documentation.
-https://reactjs.org/docs/getting-started.html
+`npm start`
+
+For additional information, see the official [React documentation](https://reactjs.org/docs/getting-started.html).
 
 Import Bootstrap in the index.html.
 
 For the CSS put this line inside the <head>:
 
+```
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+```
 
 For the JS put this line inside a <script> in the <boby>:
 
+```
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+```
 
-For additional information, see the official Bootstrap documentation.
-https://getbootstrap.com/docs/5.1/getting-started/introduction/
+For additional information, see the official [Bootstrap documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/).
 
 ## Stack
 
-React - Chosen because it is a popular framework, and the component could be integrated into several projects with this framework.
-Bootstrap - An easy system to add styles to the project, also popular and used in several projects.
-Sass - To add personalization to bootstrap styles.
-Validator - An NPM package for validating form information.
+-   React - Chosen because it is a popular framework, and the component could be integrated into several projects with this framework.
+-   Bootstrap - An easy system to add styles to the project, also popular and used in several projects.
+-   Sass - To add personalization to bootstrap styles.
+-   Validator - An NPM package for validating form information.
 
-## Roadmap and visuals | Not using the common-readme | Not required
-
-Explicación extra, imágenes, wireframes, mockups, GIFs, etc.
-
-## Reconocimientos | Not using the common-readme | Not required
+## Acknowledgments
 
 Many thanks to NUWE for proposing this challenge.
 
