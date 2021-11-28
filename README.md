@@ -76,7 +76,7 @@ For additional information, see the official [Bootstrap documentation](https://g
 
 -   React - Chosen because it is a popular framework, and the component could be integrated into several projects with this framework.
 -   Bootstrap - An easy system to add styles to the project, also popular and used in several projects.
--   [Sass](https://www.npmjs.com/package/node-sass) - To add personalization to bootstrap styles.
+-   Sass - To add personalization to bootstrap styles. Implemented with [Node-Sass](https://www.npmjs.com/package/node-sass) NPM package
 -   [Validator](https://www.npmjs.com/package/validator) - An NPM package for validating form information.
 
 ## Acknowledgments
