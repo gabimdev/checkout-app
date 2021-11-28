@@ -99,7 +99,7 @@ const CardForm = () => {
                 </fieldset>
                 <fieldset className=" fildset col-12 ">
                     <div className="row col-12 justify-content-start">
-                        <label className="form__label col-4">Card number</label>
+                        <label className="form__label col-6">Card number</label>
                         {!validator.isCreditCard(formData.cardNumber) &&
                         formData.cardNumber.length >= 1 &&
                         checkCard === 'check' ? (
