@@ -36,6 +36,7 @@ const CardForm = () => {
         };
         allCountries();
     }, []);
+    console.log(countries);
 
     const countriesToPrint = countries.sort(function (a, b) {
         if (a.name > b.name) {
@@ -178,7 +179,11 @@ const CardForm = () => {
                         <option>Select country</option>
                         {countries ? (
                             countriesToPrint.map((country) => (
-                                <option value={country.name} key={country.name}>
+                                <option
+                                    className="country-option"
+                                    value={country.name}
+                                    key={country.name}
+                                >
                                     {country.name}
                                 </option>
                             ))
